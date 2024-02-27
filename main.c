@@ -29,12 +29,6 @@ int generate_minefield(minefield mf, unsigned int rows, unsigned int cols, unsig
 	// Allocate pointers to the rows
 	mf = malloc((rows * sizeof(pmine)) + ((unsigned long long)cols * rows * sizeof(mine)));
 
-	// Allocate the columns and mines
-	for (i = 0; i < rows; i++)
-	{
-		//mf[i] = malloc(cols * sizeof(mine));
-	}
-
 	// Return :D
 	return 0;
 }
