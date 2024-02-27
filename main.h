@@ -12,9 +12,17 @@
 #define STATUS_FLAGGED 0x4
 
 // Structures
-typedef struct mine {
-	int status;
-	int distance;
+typedef struct game
+{
+	unsigned int width;
+	unsigned int height;
+	unsigned int mines;
+} game, *pgame;
+
+typedef struct mine
+{
+	unsigned short int status; // uses STATUS_ definitions
+	unsigned short int distance; // 0-9 value
 } mine, *pmine;
 
 typedef mine** minefield;

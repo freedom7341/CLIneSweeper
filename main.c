@@ -36,33 +36,33 @@ int generate_minefield(minefield mf, unsigned int rows, unsigned int cols, unsig
 int main(void)
 {
 	minefield mf = NULL;
-	unsigned int input[3] = { 0, 0, 0 };
+	game input = { 0, 0, 0 };
 
 	// Query for board size
 	printf("Enter board width (max. 80):\n");
-	if (scanf("%u", &input[1]) == 0)
+	if (scanf("%u", &input.width) == 0)
 	{
 		printf("Input error, halting...");
 		return 1;
 	}
 
 	printf("Enter board height (max. 20):\n");
-	if (scanf("%u", &input[0]) == 0)
+	if (scanf("%u", &input.height) == 0)
 	{
 		printf("Input error, halting...");
 		return 1;
 	}
 
 	// Query for amount of mines
-	printf("Enter number of mines (max. %u):\n", input[0] * input[1]);
-	if (scanf("%u", &input[2]) == 0)
+	printf("Enter number of mines (max. %u):\n", input.width * input.height);
+	if (scanf("%u", &input.mines) == 0)
 	{
 		printf("Input error, halting...");
 		return 1;
 	}
 
 	// Generate the board
-	if (generate_minefield(mf, input[0], input[1], input[2]) != 0)
+	if (generate_minefield(mf, input.height, input.width, input.mines) != 0)
 	{
 		printf("Board generation error, halting...");
 		return 1;
