@@ -7,8 +7,9 @@
 
 // Defines
 #define STATUS_SHOWN 0x0
-#define STATUS_HIDDEN 0x1
-#define STATUS_MINE 0x2
+#define STATUS_MINE 0x1
+#define STATUS_HIDDEN 0x2
+#define STATUS_FLAGGED 0x4
 
 // Structures
 typedef struct mine {
@@ -16,6 +17,4 @@ typedef struct mine {
 	int distance;
 } mine, *pmine;
 
-typedef struct minefield {
-	mine **mines;
-} minefield, *pminefield;
+typedef mine** minefield;
